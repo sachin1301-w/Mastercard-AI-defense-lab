@@ -32,9 +32,13 @@ TOKEN_LIFETIME_SECONDS = 8 * 60 * 60
 app = Flask(__name__)
 CORS(
     app,
-    resources={r"/*": {"origins": ["http://localhost:5173", "http://127.0.0.1:5173"]}},
+    resources={r"/*": {"origins": [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://mastercard-ai-defense-lab.vercel.app"
+    ]}},
     allow_headers=["Content-Type", "Authorization"],
-    methods=["GET", "POST", "OPTIONS"],
+    methods=["GET", "POST", "OPTIONS"]
 )
 
 
